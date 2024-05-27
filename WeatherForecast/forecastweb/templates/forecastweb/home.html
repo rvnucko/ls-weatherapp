@@ -1,7 +1,10 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'forecastweb/css/bootstrap.min.css' %}">
 </head>
 <body>
     <form method="get">
@@ -12,11 +15,11 @@
         <h2>Current Weather for {{ city }}</h2>
         <p>Temperature: {{ temperature }}°C</p>
         <p>Description: {{ description }}</p>
-        <h3>Forecast</h3>
+        <h3 class="h5">Forecast</h3>
         {% for item in forecast %}
             <p>Time: {{ item.dt_txt }} - Temp: {{ item.main.temp }}°C - {{ item.weather.0.description }}</p>
         {% endfor %}
     {% endif %}
+    <script src="{% static 'forecastweb/js/bootstrap.min.js' %}"></script>
 </body>
 </html>
-
