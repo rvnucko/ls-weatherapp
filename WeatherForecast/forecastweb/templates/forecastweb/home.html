@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Weather App</title>
-</head>
-<body>
-    <form method="get">
-        <input type="text" name="city" placeholder="Enter a city">
-        <input type="submit" value="Get Weather">
-    </form>
-    {% if city %}
-        <h2>Current Weather for {{ city }}</h2>
-        <p>Temperature: {{ temperature }}°C</p>
-        <p>Description: {{ description }}</p>
-        <h3>Forecast</h3>
-        {% for item in forecast %}
-            <p>Time: {{ item.dt_txt }} - Temp: {{ item.main.temp }}°C - {{ item.weather.0.description }}</p>
-        {% endfor %}
-    {% endif %}
-</body>
-</html>
+{% extends 'forecastweb/base.html' %}
 
+{% block page_title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Enter city in search bar</h2>
+</div>
+{% endblock %}
