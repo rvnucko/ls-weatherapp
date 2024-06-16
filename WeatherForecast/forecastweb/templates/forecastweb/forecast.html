@@ -1,0 +1,13 @@
+{% extends 'forecastweb/base.html' %} 
+
+{% block page_title %}Forecast{% endblock %}
+
+{% block content %}
+<h1>City Forecast</h1>
+    {% if city %}
+        <p>You searched for: {{ city }}</p>
+        <p>Current time is: {{ time }}</p>
+    {% else %}
+        <p>No city entered.</p>
+    {% endif %}
+{% endblock %}
